@@ -1,0 +1,41 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate greet with dynamic menu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_dynamic_greet_menu
+
+- rule: Say goodbye
+  steps:
+  - or:
+    - intent: goodbye
+    - intent: thank_you
+  - action: utter_goodbye
+  - action: action_dynamic_greet_menu
+
+- rule: Respond to bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+  - action: action_dynamic_greet_menu
+
+- rule: Fallback rule
+  steps:
+  - intent: nlu_fallback
+  - action: utter_fallback
+  - action: action_dynamic_greet_menu
+
+- rule: Activate document application form when documents required is asked
+  steps:
+  - intent: ask_documents_required
+  - action: action_activate_document_form
+
+- rule: Show dynamic menu after document form completion
+  steps:
+  - action: document_application_form
+  - active_loop: null
+  - action: utter_citizenship_status
+  - action: action_dynamic_greet_menu

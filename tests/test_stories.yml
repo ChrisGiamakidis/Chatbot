@@ -1,0 +1,82 @@
+stories:
+  - story: Test greeting and general description
+    steps:
+      - user: |
+          Γεια
+        intent: greet
+      - action: utter_greet
+      - action: action_dynamic_greet_menu
+      - user: |
+          τι είναι η κάρτα;
+        intent: ask_general_description
+      - action: utter_general_description
+      - action: action_dynamic_greet_menu
+
+  - story: Test card cost and competent authority
+    steps:
+      - user: |
+          πόσο κοστίζει;
+        intent: ask_card_cost
+      - action: utter_ask_card_cost
+      - action: action_dynamic_greet_menu
+      - user: |
+          Ποια είναι η αρμόδια αρχή;
+        intent: ask_competent_authority
+      - action: utter_competent_authority
+      - action: action_dynamic_greet_menu
+
+  - story: Test application process and required documents
+    steps:
+      - user: |
+          Πώς μπορώ να κάνω αίτηση;
+        intent: ask_how_to_apply
+      - action: utter_ask_how_to_apply
+      - action: action_provide_help_link
+      - action: action_dynamic_greet_menu
+      - user: |
+          τι δικαιολογητικά χρειάζομαι;
+        intent: ask_documents_required
+      - action: action_activate_document_form
+      - active_loop: document_application_form
+      - active_loop: null
+      - action: utter_citizenship_status
+      - action: action_dynamic_greet_menu
+
+  - story: Test card not arrived and data safety
+    steps:
+      - user: |
+          δεν έχω παραλάβει την κάρτα μου
+        intent: ask_card_not_arrived
+      - action: utter_ask_card_not_arrived
+      - action: action_dynamic_greet_menu
+      - user: |
+          είναι ασφαλή τα δεδομένα μου;
+        intent: ask_if_data_safe
+      - action: utter_ask_if_data_safe
+      - action: action_dynamic_greet_menu
+
+  - story: Test duration and contact info
+    steps:
+      - user: |
+          πόσα χρόνια ισχύει;
+        intent: ask_card_duration
+      - action: utter_ask_card_duration
+      - action: action_dynamic_greet_menu
+      - user: |
+          που μπορώ να επικοινωνήσω;
+        intent: ask_contact_info
+      - action: action_provide_help_link
+      - action: action_dynamic_greet_menu
+
+  - story: Test upload issue and modify application
+    steps:
+      - user: |
+          δεν ανεβαίνουν τα αρχεία μου
+        intent: ask_upload_issue
+      - action: utter_ask_upload_issue
+      - action: action_dynamic_greet_menu
+      - user: |
+          μπορώ να διορθώσω την αίτηση;
+        intent: ask_modify_application
+      - action: utter_ask_modify_application
+      - action: action_dynamic_greet_menu

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rasa Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Rasa Webchat library -->
+  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
+  <style>
+    body {
+      background-image: url('road.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Clear any old session data
+      sessionStorage.clear();
+      localStorage.clear();
+
+      WebChat.default({
+        initPayload: "/greet",
+        customData: {"language": "el"},
+        socketUrl: "http://localhost:5005",
+        socketPath: "/socket.io/",
+        title: "ChatBot Ευφυούς Ταχογράφου",
+        subtitle: "Ψηφιακός βοηθός",
+        inputTextFieldHint: "Πληκτρολογήστε το μήνυμά σας...",
+        connectingText: "Συνδέεται...",
+        hideWhenNotConnected: true,
+        showFullScreenButton: true,
+        params: {
+          storage: "session"
+        }
+      });
+    });
+  </script>
+</body>
+</html>

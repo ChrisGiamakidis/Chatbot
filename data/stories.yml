@@ -1,0 +1,115 @@
+version: "3.1"
+
+stories:
+
+- story: General description
+  steps:
+  - intent: ask_general_description
+  - action: utter_general_description
+  - action: action_dynamic_greet_menu
+
+- story: Card cost
+  steps:
+  - intent: ask_card_cost
+  - action: utter_ask_card_cost
+  - action: action_dynamic_greet_menu
+
+- story: Competent authority
+  steps:
+  - intent: ask_competent_authority
+  - action: utter_competent_authority
+  - action: action_dynamic_greet_menu
+
+- story: Card requirements
+  steps:
+  - intent: ask_requirements
+  - action: utter_requirements
+  - action: action_dynamic_greet_menu
+
+- story: Contact info
+  steps:
+  - intent: ask_contact_info
+  - action: action_provide_help_link
+  - action: action_dynamic_greet_menu
+
+- story: direct question about card purpose
+  steps:
+  - intent: ask_card_purpose
+  - action: utter_ask_card_purpose
+  - action: action_dynamic_greet_menu
+
+- story: direct question about the procedure of card application
+  steps:
+  - intent: ask_how_to_apply
+  - action: utter_ask_how_to_apply
+  - action: action_provide_help_link
+  - action: action_dynamic_greet_menu
+
+- story: direct question about the location of card application
+  steps:
+  - intent: ask_where_to_apply
+  - action: utter_ask_where_to_apply
+  - action: action_dynamic_greet_menu
+
+- story: direct question about issuance duration
+  steps:
+  - intent: ask_how_long_issuance
+  - action: utter_ask_how_long_issuance
+  - action: action_dynamic_greet_menu
+
+- story: direct question about receiving card
+  steps:
+  - intent: ask_how_to_receive_card
+  - action: utter_ask_how_to_receive_card
+  - action: action_dynamic_greet_menu
+
+- story: direct question about upload issue
+  steps:
+  - intent: ask_upload_issue
+  - action: utter_ask_upload_issue
+  - action: action_dynamic_greet_menu
+
+- story: direct question about modify application
+  steps:
+  - intent: ask_modify_application
+  - action: utter_ask_modify_application
+  - action: action_dynamic_greet_menu
+
+- story: direct question about card not arrived
+  steps:
+  - intent: ask_card_not_arrived
+  - action: utter_ask_card_not_arrived
+  - action: action_dynamic_greet_menu
+
+- story: direct question about card duration
+  steps:
+  - intent: ask_card_duration
+  - action: utter_ask_card_duration
+  - action: action_dynamic_greet_menu
+
+- story: direct question about what data
+  steps:
+  - intent: ask_what_data
+  - action: utter_ask_what_data
+  - action: action_dynamic_greet_menu
+
+- story: direct question about data safety
+  steps:
+  - intent: ask_if_data_safe
+  - action: utter_ask_if_data_safe
+  - action: action_dynamic_greet_menu
+
+- story: user asks what output is produced
+  steps:
+    - intent: ask_what_output
+    - action: utter_ask_what_output
+    - action: action_dynamic_greet_menu
+
+- story: user asks two different questions (not covered by rules)
+  steps:
+  - intent: ask_card_duration
+  - action: utter_ask_card_duration
+  - action: action_dynamic_greet_menu
+  - intent: ask_who_needs_card 
+  - action: utter_ask_who_needs_card
+  - action: action_dynamic_greet_menu

@@ -1,0 +1,173 @@
+{
+  "greet": {
+    "precision": 0.3548387096774194,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.5116279069767442,
+    "support": 12,
+    "confused_with": {
+      "goodbye": 1
+    }
+  },
+  "ask_how_to_apply": {
+    "precision": 0.1,
+    "recall": 0.2,
+    "f1-score": 0.13333333333333333,
+    "support": 5,
+    "confused_with": {
+      "ask_general_description": 2,
+      "ask_where_to_apply": 1
+    }
+  },
+  "thank_you": {
+    "precision": 0.5,
+    "recall": 0.2,
+    "f1-score": 0.28571428571428575,
+    "support": 5,
+    "confused_with": {
+      "greet": 4
+    }
+  },
+  "ask_documents_required": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 6,
+    "confused_with": {
+      "ask_card_cost": 3,
+      "ask_general_description": 2,
+      "ask_how_to_apply": 1
+    }
+  },
+  "ask_contact_info": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "ask_how_to_apply": 2,
+      "ask_where_to_apply": 1,
+      "ask_general_description": 1
+    }
+  },
+  "ask_where_to_apply": {
+    "precision": 0.375,
+    "recall": 0.42857142857142855,
+    "f1-score": 0.39999999999999997,
+    "support": 7,
+    "confused_with": {
+      "ask_how_to_apply": 2,
+      "ask_contact_info": 2
+    }
+  },
+  "goodbye": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 9,
+    "confused_with": {
+      "greet": 7,
+      "thank_you": 1,
+      "ask_card_cost": 1
+    }
+  },
+  "ask_how_long_issuance": {
+    "precision": 0.3333333333333333,
+    "recall": 0.2,
+    "f1-score": 0.25,
+    "support": 5,
+    "confused_with": {
+      "ask_if_pro_driver": 1,
+      "ask_how_to_apply": 1
+    }
+  },
+  "inform_application_method": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "greet": 4,
+      "goodbye": 1
+    }
+  },
+  "ask_card_cost": {
+    "precision": 0.2857142857142857,
+    "recall": 0.36363636363636365,
+    "f1-score": 0.32,
+    "support": 11,
+    "confused_with": {
+      "ask_if_pro_driver": 2,
+      "ask_general_description": 2
+    }
+  },
+  "ask_if_pro_driver": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "ask_card_cost": 2,
+      "ask_where_to_apply": 1,
+      "ask_how_to_apply": 1
+    }
+  },
+  "ask_who_needs_card": {
+    "precision": 1.0,
+    "recall": 0.2222222222222222,
+    "f1-score": 0.3636363636363636,
+    "support": 9,
+    "confused_with": {
+      "ask_general_description": 4,
+      "goodbye": 1
+    }
+  },
+  "inform_citizenship": {
+    "precision": 1.0,
+    "recall": 0.2857142857142857,
+    "f1-score": 0.4444444444444445,
+    "support": 7,
+    "confused_with": {
+      "greet": 2,
+      "bot_challenge": 1
+    }
+  },
+  "bot_challenge": {
+    "precision": 0.6666666666666666,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.4444444444444444,
+    "support": 6,
+    "confused_with": {
+      "greet": 3,
+      "goodbye": 1
+    }
+  },
+  "ask_general_description": {
+    "precision": 0.3333333333333333,
+    "recall": 0.6,
+    "f1-score": 0.42857142857142855,
+    "support": 10,
+    "confused_with": {
+      "ask_card_cost": 2,
+      "ask_if_pro_driver": 1
+    }
+  },
+  "accuracy": 0.308411214953271,
+  "macro avg": {
+    "precision": 0.3299257552483359,
+    "recall": 0.25000962000962,
+    "f1-score": 0.23878481380806962,
+    "support": 107
+  },
+  "weighted avg": {
+    "precision": 0.35538244541108577,
+    "recall": 0.308411214953271,
+    "f1-score": 0.2723457225717604,
+    "support": 107
+  },
+  "micro avg": {
+    "precision": 0.308411214953271,
+    "recall": 0.308411214953271,
+    "f1-score": 0.308411214953271,
+    "support": 107
+  }
+}

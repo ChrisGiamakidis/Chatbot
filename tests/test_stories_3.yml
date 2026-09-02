@@ -1,0 +1,13 @@
+stories:
+  - story: Test upload issue then card cost
+    steps:
+      - user: |
+          δεν ανεβαίνουν τα αρχεία
+        intent: ask_upload_issue
+      - action: utter_ask_upload_issue
+      - action: action_dynamic_greet_menu
+      - user: |
+          πόσο κάνει η κάρτα;
+        intent: ask_card_cost
+      - action: utter_ask_card_cost
+      - action: action_dynamic_greet_menu

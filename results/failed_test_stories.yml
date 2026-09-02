@@ -1,0 +1,14 @@
+version: "3.1"
+stories:
+- story: Test application process and required documents (tests/test_stories.yml)
+  steps:
+  - intent: ask_how_to_apply
+  - action: utter_ask_how_to_apply
+  - action: action_provide_help_link
+  - action: action_dynamic_greet_menu
+  - intent: ask_documents_required
+  - action: action_activate_document_form
+  - active_loop: document_application_form
+  - active_loop: null
+  - action: utter_citizenship_status  # predicted: action_listen
+  - action: action_dynamic_greet_menu

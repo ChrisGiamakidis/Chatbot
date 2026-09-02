@@ -1,0 +1,594 @@
+[
+  {
+    "text": "τα λέμε",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.16906051337718964
+    }
+  },
+  {
+    "text": "τα ξαναλέμε",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.16906051337718964
+    }
+  },
+  {
+    "text": "είσαι chatbot;",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.1583852916955948
+    }
+  },
+  {
+    "text": "Καλό",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4923412799835205
+    }
+  },
+  {
+    "text": "Είναι υποχρεωτική για όλους τους οδηγούς;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.1330074965953827
+    }
+  },
+  {
+    "text": "Η κάρτα ταχογράφου είναι υποχρεωτική για όλους;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.1826329082250595
+    }
+  },
+  {
+    "text": "Σε ποια υπηρεσία γίνεται η αίτηση;",
+    "intent": "ask_where_to_apply",
+    "intent_prediction": {
+      "name": "ask_contact_info",
+      "confidence": 0.12511441111564636
+    }
+  },
+  {
+    "text": "Ποιες είναι οι ενέργειες για την έκδοση;",
+    "intent": "ask_how_to_apply",
+    "intent_prediction": {
+      "name": "ask_contact_info",
+      "confidence": 0.17070776224136353
+    }
+  },
+  {
+    "text": "Μπορώ να πληρώσω με κάρτα ή μέσω e-banking;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_contact_info",
+      "confidence": 0.13927072286605835
+    }
+  },
+  {
+    "text": "Πότε είναι η προθεσμία διεκπεραίωσης;",
+    "intent": "ask_how_long_issuance",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.19044379889965057
+    }
+  },
+  {
+    "text": "Τι έγγραφα πρέπει να καταθέσω;",
+    "intent": "ask_documents_required",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.15994793176651
+    }
+  },
+  {
+    "text": "Χρειάζεται επαγγελματικό δίπλωμα;",
+    "intent": "ask_if_pro_driver",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.1432752013206482
+    }
+  },
+  {
+    "text": "Υπάρχει τηλέφωνο επικοινωνίας;",
+    "intent": "ask_contact_info",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.16084183752536774
+    }
+  },
+  {
+    "text": "Ηλεκτρονικά",
+    "intent": "inform_application_method",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5248749852180481
+    }
+  },
+  {
+    "text": "Είμαι πολίτης Ελλάδας",
+    "intent": "inform_citizenship",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.1336633712053299
+    }
+  },
+  {
+    "text": "Έλληνας",
+    "intent": "inform_citizenship",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5109981298446655
+    }
+  },
+  {
+    "text": "αντίο σας",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.2750767767429352
+    }
+  },
+  {
+    "text": "είσαι άνθρωπος;",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.23894478380680084
+    }
+  },
+  {
+    "text": "Σας ευχαριστώ",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.28289860486984253
+    }
+  },
+  {
+    "text": "Σε ποιους είναι υποχρεωτική η κάρτα ταχογράφου;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.2025274634361267
+    }
+  },
+  {
+    "text": "Πού μπορώ να καταθέσω αίτηση;",
+    "intent": "ask_where_to_apply",
+    "intent_prediction": {
+      "name": "ask_contact_info",
+      "confidence": 0.10160909593105316
+    }
+  },
+  {
+    "text": "Ποια είναι η διαδικασία για έκδοση κάρτας;",
+    "intent": "ask_how_to_apply",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.22024676203727722
+    }
+  },
+  {
+    "text": "Με ποιον τρόπο πληρώνεται η κάρτα;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.1566576361656189
+    }
+  },
+  {
+    "text": "Δέχεται κάρτα η υπηρεσία;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_how_long_issuance",
+      "confidence": 0.11019593477249146
+    }
+  },
+  {
+    "text": "Πόσος χρόνος χρειάζεται για να βγει η κάρτα;",
+    "intent": "ask_how_long_issuance",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.29649919271469116
+    }
+  },
+  {
+    "text": "Ποιος είναι ο αριθμός δικαιολογητικών;",
+    "intent": "ask_documents_required",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.12440375983715057
+    }
+  },
+  {
+    "text": "Είναι μόνο για επαγγελματίες;",
+    "intent": "ask_if_pro_driver",
+    "intent_prediction": {
+      "name": "ask_how_long_issuance",
+      "confidence": 0.10362307727336884
+    }
+  },
+  {
+    "text": "Πώς μπορώ να επικοινωνήσω με την αρμόδια υπηρεσία;",
+    "intent": "ask_contact_info",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.19538149237632751
+    }
+  },
+  {
+    "text": "μέσω gov.gr",
+    "intent": "inform_application_method",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.2413042187690735
+    }
+  },
+  {
+    "text": "Είμαι Έλληνας",
+    "intent": "inform_citizenship",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.23725081980228424
+    }
+  },
+  {
+    "text": "γεια χαρά",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.22139453887939453
+    }
+  },
+  {
+    "text": "καλό βράδυ",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.19844934344291687
+    }
+  },
+  {
+    "text": "μιλάω με bot;",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.14153501391410828
+    }
+  },
+  {
+    "text": "Πολύ ωραία",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.20145867764949799
+    }
+  },
+  {
+    "text": "Θέλω μια γενική περιγραφή",
+    "intent": "ask_general_description",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.1406215876340866
+    }
+  },
+  {
+    "text": "Για ποιους οδηγούς είναι η κάρτα;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.2053368091583252
+    }
+  },
+  {
+    "text": "Τι βήματα χρειάζεται για την πρώτη έκδοση κάρτας;",
+    "intent": "ask_how_to_apply",
+    "intent_prediction": {
+      "name": "ask_where_to_apply",
+      "confidence": 0.16998542845249176
+    }
+  },
+  {
+    "text": "Υπάρχει κόστος για την κάρτα;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_where_to_apply",
+      "confidence": 0.1369388997554779
+    }
+  },
+  {
+    "text": "Θα χρειαστείτε τι;",
+    "intent": "ask_documents_required",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.12399525195360184
+    }
+  },
+  {
+    "text": "Πρέπει να είμαι επαγγελματίας οδηγός;",
+    "intent": "ask_if_pro_driver",
+    "intent_prediction": {
+      "name": "ask_where_to_apply",
+      "confidence": 0.2000623494386673
+    }
+  },
+  {
+    "text": "Ποια είναι η υπηρεσία υποστήριξης;",
+    "intent": "ask_contact_info",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.2225063145160675
+    }
+  },
+  {
+    "text": "Δια ζώσης",
+    "intent": "inform_application_method",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.20145867764949799
+    }
+  },
+  {
+    "text": "Είμαι πολίτης χώρας εκτός Ευρωπαϊκής Ένωσης",
+    "intent": "inform_citizenship",
+    "intent_prediction": {
+      "name": "ask_where_to_apply",
+      "confidence": 0.17472952604293823
+    }
+  },
+  {
+    "text": "γεια σου",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2521750330924988
+    }
+  },
+  {
+    "text": "εις το επανιδείν",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.10991562902927399
+    }
+  },
+  {
+    "text": "θα τα ξαναπούμε",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank_you",
+      "confidence": 0.09964431077241898
+    }
+  },
+  {
+    "text": "Τι σημαίνει κάρτα ταχογράφου;",
+    "intent": "ask_general_description",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.11751861125230789
+    }
+  },
+  {
+    "text": "Είναι αναγκαία;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2167355865240097
+    }
+  },
+  {
+    "text": "Μπορώ να υποβάλλω την αίτηση από το σπίτι;",
+    "intent": "ask_where_to_apply",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.2177569717168808
+    }
+  },
+  {
+    "text": "Πόσο κοστίζει η έκδοση της κάρτας;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.23718410730361938
+    }
+  },
+  {
+    "text": "Πόσο διαρκεί η διαδικασία έκδοσης;",
+    "intent": "ask_how_long_issuance",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.11760987341403961
+    }
+  },
+  {
+    "text": "Ποια δικαιολογητικά χρειάζονται;",
+    "intent": "ask_documents_required",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.12464325875043869
+    }
+  },
+  {
+    "text": "Παρέχεται σε ποιους;",
+    "intent": "ask_if_pro_driver",
+    "intent_prediction": {
+      "name": "ask_card_cost",
+      "confidence": 0.13730862736701965
+    }
+  },
+  {
+    "text": "Ποιος είναι ο θεσμικός φορέας;",
+    "intent": "ask_contact_info",
+    "intent_prediction": {
+      "name": "ask_where_to_apply",
+      "confidence": 0.1113463044166565
+    }
+  },
+  {
+    "text": "σε ΚΕΠ",
+    "intent": "inform_application_method",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.21249094605445862
+    }
+  },
+  {
+    "text": "αντίο",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40693631768226624
+    }
+  },
+  {
+    "text": "καληνύχτα",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40290674567222595
+    }
+  },
+  {
+    "text": "είσαι ρομπότ;",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.2051026076078415
+    }
+  },
+  {
+    "text": "Ευχαριστώ",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3845677077770233
+    }
+  },
+  {
+    "text": "Τι είναι η κάρτα;",
+    "intent": "ask_general_description",
+    "intent_prediction": {
+      "name": "ask_if_pro_driver",
+      "confidence": 0.1808198243379593
+    }
+  },
+  {
+    "text": "Μπορείς να μου εξηγήσεις τι είναι η κάρτα ταχογράφου;",
+    "intent": "ask_general_description",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.20146684348583221
+    }
+  },
+  {
+    "text": "Ποιος πρέπει να την έχει;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "ask_if_pro_driver",
+      "confidence": 0.18509723246097565
+    }
+  },
+  {
+    "text": "Πρέπει κάθε οδηγός να έχει την κάρτα;",
+    "intent": "ask_who_needs_card",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.19613392651081085
+    }
+  },
+  {
+    "text": "Πού πρέπει να πάω για την κάρτα;",
+    "intent": "ask_where_to_apply",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.2373531460762024
+    }
+  },
+  {
+    "text": "Πώς γίνεται η αίτηση;",
+    "intent": "ask_how_to_apply",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.20730365812778473
+    }
+  },
+  {
+    "text": "Πόσα λεφτά χρειάζονται;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_if_pro_driver",
+      "confidence": 0.15520431101322174
+    }
+  },
+  {
+    "text": "Πώς μπορώ να πληρώσω;",
+    "intent": "ask_card_cost",
+    "intent_prediction": {
+      "name": "ask_if_pro_driver",
+      "confidence": 0.221095472574234
+    }
+  },
+  {
+    "text": "Πότε θα την παραλάβω;",
+    "intent": "ask_how_long_issuance",
+    "intent_prediction": {
+      "name": "ask_if_pro_driver",
+      "confidence": 0.1959860622882843
+    }
+  },
+  {
+    "text": "Ποια χαρτιά χρειάζομαι για την πρώτη έκδοση;",
+    "intent": "ask_documents_required",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.31061941385269165
+    }
+  },
+  {
+    "text": "Τι χρειάζομαι για την αίτηση;",
+    "intent": "ask_documents_required",
+    "intent_prediction": {
+      "name": "ask_general_description",
+      "confidence": 0.24579662084579468
+    }
+  },
+  {
+    "text": "Είναι απαραίτητο να είμαι οδηγός φορτηγού ή λεωφορείου;",
+    "intent": "ask_if_pro_driver",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.26536113023757935
+    }
+  },
+  {
+    "text": "Πώς έρχομαι σε επαφή με την υπηρεσία;",
+    "intent": "ask_contact_info",
+    "intent_prediction": {
+      "name": "ask_how_to_apply",
+      "confidence": 0.2101457118988037
+    }
+  },
+  {
+    "text": "αυτοπροσώπως",
+    "intent": "inform_application_method",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40290674567222595
+    }
+  },
+  {
+    "text": "Είμαι από χώρα της ΕΕ",
+    "intent": "inform_citizenship",
+    "intent_prediction": {
+      "name": "ask_if_pro_driver",
+      "confidence": 0.185707226395607
+    }
+  }
+]

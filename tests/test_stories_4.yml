@@ -1,0 +1,19 @@
+stories:
+  - story: Test application process then authority then contact
+    steps:
+      - user: |
+          πώς κάνω αίτηση;
+        intent: ask_how_to_apply
+      - action: utter_ask_how_to_apply
+      - action: action_provide_help_link
+      - action: action_dynamic_greet_menu
+      - user: |
+          ποια είναι η αρμόδια αρχή;
+        intent: ask_competent_authority
+      - action: utter_competent_authority
+      - action: action_dynamic_greet_menu
+      - user: |
+          θέλω στοιχεία επικοινωνίας
+        intent: ask_contact_info
+      - action: action_provide_help_link
+      - action: action_dynamic_greet_menu

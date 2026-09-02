@@ -1,0 +1,18 @@
+stories:
+  - story: Test receiving card then data safety
+    steps:
+      - user: |
+          Πώς μπορώ να παραλάβω την κάρτα μου;
+        intent: ask_how_to_receive_card
+      - action: utter_ask_how_to_receive_card
+      - action: action_dynamic_greet_menu
+      - user: |
+          είναι ασφαλή τα δεδομένα;
+        intent: ask_if_data_safe
+      - action: utter_ask_if_data_safe
+      - action: action_dynamic_greet_menu
+      - user: |
+          πόσα χρόνια ισχύει;
+        intent: ask_card_duration
+      - action: utter_ask_card_duration
+      - action: action_dynamic_greet_menu

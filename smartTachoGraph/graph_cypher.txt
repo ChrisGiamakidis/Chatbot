@@ -1,0 +1,79 @@
+CREATE (ps:PublicService {name: "Πρώτη Έκδοση Κάρτας Ευφυούς Ταχογράφου Οδηγού", identifier: "385756", description: "Η Κάρτα Ευφυούς Ταχογράφου Οδηγού είναι μια προσωποποιημένη κάρτα και χρησιμοποιείται από επαγγελματίες οδηγούς για τη λειτουργία των ψηφιακών ταχογράφων σε φορτηγά και λεωφορεία. Αποτελεί υποχρεωτικό έγγραφο σύμφωνα με την ευρωπαϊκή και ελληνική νομοθεσία. Η διαδικασία για την πρώτη έκδοση της κάρτας αφορά οδηγούς που δεν είχαν στο παρελθόν κάρτα ταχογράφου ή ξεκινάνε επαγγελματική δραστηριότητα σε μεταφορές και απαιτείται να οδηγούν οχήματα με ευφυείς ταχογράφους."});
+
+CREATE (po:PublicOrganisation {prefferedLabel: "Υπουργείο Υποδομών και Μεταφορών"});
+
+CREATE (c1:Channel {name: "Φυσικό", location: "Υπηρεσία Μεταφορών / ΚΕΠ"});
+CREATE (c2:Channel {name: "Ψηφιακό", location: "https://www.gov.gr/ipiresies/epikheirematike-drasterioteta/adeiodoteseis-kai-summorphose/karta-psephiakou-takhographou-odegou"});
+
+CREATE (d1:Evidence {name: "Ταυτότητα", isMandatory: true});
+CREATE (d1_1:Evidence {name: "Διαβατήριο", isMandatory: true});
+CREATE (d2:Evidence {name: "Ψηφιακή εικόνα υπογραφής", isMandatory: true});
+CREATE (d3:Evidence {name: "Φωτογραφία σε ψηφιακή μορφή", isMandatory: true});
+CREATE (d4:Evidence {name: "Βεβαίωση μόνιμης κατοικίας", isMandatory: false});
+CREATE (d5:Evidence {name: "Άδεια παραμονής για πολίτες εκτός ΕΕ", isMandatory: false});
+CREATE (d6:Evidence {name: "Άδεια Οδήγησης", isMandatory: true});
+
+CREATE (r1:Requirement {name: "Άδεια Οδήγησης", description: "Ο αιτών θα πρέπει να έχει ισχύουσα ελληνική άδεια οδήγησης μίας εκ των κατηγοριών ΒΕ, C1, C1E, C, CE, D1, D1E, D, DE (ΠΔ 51 ΦΕΚ Α101 - 27/04/2012, όπως αυτό ισχύει) ή ισχύουσα αντίστοιχων κατηγοριών άδεια οδήγησης που έχει εκδοθεί από άλλο κράτος-μέλος της Ε.Ε."});
+CREATE (r2:Requirement {name: "Μόνιμη Κατοικία", description: "Οι Έλληνες πολίτες, όσο και πολίτες άλλων κρατών (μελών ή μη της Ε.Ε.) θα πρέπει να έχουν την κανονική διαμονή τους στην Ελλάδα"});
+CREATE (r3:Requirement {name: "Κωδικοί Taxisnet", description: "Για την ψηφιακή κατάθεση της αίτησης ο ενδιαφερόμενος θα πρέπει να είναι κάτοχος κωδικών Taxisnet"});
+CREATE (r4:Requirement {name: "Προδιαγραφές Ψηφιακών Αρχείων", description: "Κατάλληλη μορφή ψηφιακών αρχείων"});
+
+CREATE (cost:Cost {name: "Κόστος", description: "eparavolo: 0041", currency: "EUR", value: 150});
+
+CREATE (out1:Output {name: "Κάρτα Ευφυούς Ταχογράφου Οδηγού", validityYears: 5});
+CREATE (out2:Output {name:  "Ενημέρωση Μητρώου"});
+
+CREATE (lr1:LegalResource {name: "ΦΕΚ 357/Β", description: "Υπουργική Απόφαση 22143/Γ2/2008"});
+CREATE (lr2:LegalResource {name: "ΦΕΚ 577/Β", description: "Υπουργική Απόφαση 12527/1159/2014"});
+CREATE (lr3:LegalResource {name: "ΦΕΚ 4615/Β", description: "Κοινή Υπουργική Απόφαση 262593/2022"});
+CREATE (lr4:LegalResource {name: "E.K. 165/2014", description: "Ευρωπαϊκός Κανονισμός 165/2014"});
+CREATE (lr5:LegalResource {name: "E.K. 68/2016", description: "Ευρωπαϊκός Κανονισμός 68/2016"});
+
+
+MATCH(ps:PublicService), (po:PublicOrganisation) CREATE(ps)-[:hasCompetentAuthority {isMandatory: true}]->(po);
+
+MATCH(ps:PublicService), (c1:Channel {name: "Φυσικό"}) CREATE(ps)-[:hasChannel]->(c1);
+MATCH(ps:PublicService), (c2:Channel {name: "Ψηφιακό"}) CREATE(ps)-[:hasChannel]->(c2);
+
+MATCH(d1:Evidence {name: "Ταυτότητα"}), (d1_1:Evidence {name: "Διαβατήριο"}) CREATE(d1)-[:AlternativeTo]->(d1_1);
+MATCH(d1:Evidence {name: "Ταυτότητα"}), (d1_1:Evidence {name: "Διαβατήριο"}) CREATE(d1_1)-[:AlternativeTo]->(d1);
+
+MATCH(ps:PublicService), (d1:Evidence {name: "Ταυτότητα"}) CREATE(ps)-[:hasInput]->(d1);
+MATCH(ps:PublicService), (d1_1:Evidence {name: "Διαβατήριο"}) CREATE(ps)-[:hasInput]->(d1_1);
+MATCH(ps:PublicService), (d2:Evidence {name: "Ψηφιακή εικόνα υπογραφής"}) CREATE(ps)-[:hasInput]->(d2);
+MATCH(ps:PublicService), (d3:Evidence {name: "Φωτογραφία σε ψηφιακή μορφή"}) CREATE(ps)-[:hasInput]->(d3);
+MATCH(ps:PublicService), (d4:Evidence {name: "Βεβαίωση μόνιμης κατοικίας"}) CREATE(ps)-[:hasInput]->(d4);
+MATCH(ps:PublicService), (d5:Evidence {name: "Άδεια παραμονής για πολίτες εκτός ΕΕ"}) CREATE(ps)-[:hasInput]->(d5);
+MATCH(ps:PublicService), (d6:Evidence {name: "Άδεια Οδήγησης"}) CREATE(ps)-[:hasInput]->(d6);
+
+MATCH (c1:Channel {name: "Φυσικό"}), (d1:Evidence {name: "Ταυτότητα"}) CREATE (c1)-[:hasInput]->(d1);
+MATCH (c1:Channel {name: "Φυσικό"}), (d1_1:Evidence {name: "Διαβατήριο"}) CREATE (c1)-[:hasInput]->(d1_1);
+MATCH (c2:Channel {name: "Ψηφιακό"}), (d2:Evidence {name: "Ψηφιακή εικόνα υπογραφής"}) CREATE (c2)-[:hasInput]->(d2);
+MATCH (c1:Channel {name: "Φυσικό"}), (d3:Evidence {name: "Φωτογραφία σε ψηφιακή μορφή"}) CREATE (c1)-[:hasInput]->(d3);
+MATCH (c2:Channel {name: "Ψηφιακό"}), (d3:Evidence {name: "Φωτογραφία σε ψηφιακή μορφή"}) CREATE (c2)-[:hasInput]->(d3);
+MATCH (c1:Channel {name: "Φυσικό"}), (d4:Evidence {name: "Βεβαίωση μόνιμης κατοικίας"}) CREATE (c1)-[:hasInput]->(d4);
+MATCH (c1:Channel {name: "Φυσικό"}), (d5:Evidence {name: "Άδεια παραμονής για πολίτες εκτός ΕΕ"}) CREATE (c1)-[:hasInput]->(d5);
+MATCH (c1:Channel {name: "Φυσικό"}), (d6:Evidence {name: "Άδεια Οδήγησης"}) CREATE (c1)-[:hasInput]->(d6);
+
+MATCH (ps:PublicService), (r1:Requirement {name: "Άδεια Οδήγησης"}) CREATE (ps)-[:holdsRequirement] -> (r1);
+MATCH (ps:PublicService), (r2:Requirement {name: "Μόνιμη Κατοικία"}) CREATE (ps)-[:holdsRequirement] -> (r2);
+MATCH (ps:PublicService), (r3:Requirement {name: "Κωδικοί Taxisnet"}) CREATE (ps)-[:holdsRequirement] -> (r3);
+MATCH (ps:PublicService), (r4:Requirement {name: "Προδιαγραφές Ψηφιακών Αρχείων"}) CREATE (ps)-[:holdsRequirement] -> (r4);
+
+MATCH (r1:Requirement {name: "Άδεια Οδήγησης"}), (d6:Evidence {name: "Άδεια Οδήγησης"}) CREATE (r1)-[:hasSupportingEvidence]->(d6);
+MATCH (r2:Requirement {name: "Μόνιμη Κατοικία"}), (d4:Evidence {name: "Βεβαίωση μόνιμης κατοικίας"}) CREATE (r2)-[:hasSupportingEvidence]->(d4);
+MATCH (r2:Requirement {name: "Μόνιμη Κατοικία"}), (d5:Evidence {name: "Άδεια παραμονής για πολίτες εκτός ΕΕ"}) CREATE (r2)-[:hasSupportingEvidence]->(d5);
+MATCH (r4:Requirement {name: "Προδιαγραφές Ψηφιακών Αρχείων"}), (d2:Evidence {name: "Ψηφιακή εικόνα υπογραφής"}) CREATE (r4)-[:hasSupportingEvidence]->(d2);
+MATCH (r4:Requirement {name: "Προδιαγραφές Ψηφιακών Αρχείων"}), (d3:Evidence {name: "Φωτογραφία σε ψηφιακή μορφή"}) CREATE (r4)-[:hasSupportingEvidence]->(d3);
+
+MATCH(ps:PublicService), (c:Cost) CREATE(ps)-[:hasCost]->(c);
+
+MATCH (ps:PublicService), (out1:Output {name: "Κάρτα Ευφυούς Ταχογράφου Οδηγού"}) CREATE(ps)-[:produces]->(out1);
+MATCH (ps:PublicService), (out2:Output {name: "Ενημέρωση Μητρώου"}) 
+CREATE (ps)-[:produces]->(out2);
+
+MATCH (ps:PublicService), (lr1:LegalResource {name: "E.K. 68/2016", description: "Ευρωπαϊκός Κανονισμός 68/2016"}) CREATE (ps)-[:hasLegalResource]->(lr1);
+MATCH (ps:PublicService), (lr2:LegalResource {name: "E.K. 165/2014", description: "Ευρωπαϊκός Κανονισμός 165/2014"}) CREATE (ps)-[:hasLegalResource]->(lr2);
+MATCH (ps:PublicService), (lr3:LegalResource {name: "ΦΕΚ 4615/Β", description: "Κοινή Υπουργική Απόφαση 262593/2022"}) CREATE (ps)-[:hasLegalResource]->(lr3);
+MATCH (ps:PublicService), (lr4:LegalResource {name: "ΦΕΚ 577/Β", description: "Υπουργική Απόφαση 12527/1159/2014"}) CREATE (ps)-[:hasLegalResource]->(lr4);
+MATCH (ps:PublicService), (lr5:LegalResource {name: "ΦΕΚ 357/Β", description: "Υπουργική Απόφαση 22143/Γ2/2008"}) CREATE (ps)-[:hasLegalResource]->(lr5);

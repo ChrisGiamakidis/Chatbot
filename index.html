@@ -5,7 +5,7 @@
   <title>Rasa Chatbot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Rasa Webchat library -->
-  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
+  <script src="vendor/rasa-webchat-1.0.1.js"></script>
   <style>
     body {
       background-image: url('road.jpg');
@@ -115,6 +115,9 @@
         customData: {"language": "el"},
         socketUrl: BOT_URL,
         socketPath: "/socket.io/",
+        protocolOptions: {
+          extraHeaders: { "ngrok-skip-browser-warning": "1" }
+        },
         title: "ChatBot Ευφυούς Ταχογράφου",
         subtitle: "Ψηφιακός βοηθός",
         inputTextFieldHint: "Πληκτρολογήστε το μήνυμά σας...",

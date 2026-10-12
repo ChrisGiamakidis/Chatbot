@@ -53,10 +53,10 @@
 <body>
   <div id="offline">
     <div class="card">
-      <h2>Ο ψηφιακός βοηθός είναι προσωρινά εκτός λειτουργίας</h2>
+      <h2>Ο ψηφιακός βοηθός είναι προσωρινά εκτός σύνδεσης</h2>
       <p>
         Ο διαχειριστής δεν τον έχει ενεργοποιήσει ακόμα. Μπορείτε να τον ειδοποιήσετε
-        με ένα κλικ. Κρατήστε τη σελίδα ανοιχτή και θα συνδεθείτε αυτόματα μόλις ο βοηθός
+        με ένα κλικ. Κρατήστε τη σελίδα ανοιχτή και θα συνδεθεί αυτόματα μόλις ο βοηθός
         γίνει διαθέσιμος.
       </p>
       <button id="notifyBtn">Ειδοποίηση διαχειριστή</button>
@@ -81,12 +81,15 @@
     let pollTimer = null;
 
     // The bot counts as online only if Rasa answers with a normal CORS response.
-    // If the tunnel or Rasa is down, the request fails or is rejected.
+    // The ngrok header skips ngrok's free-plan warning page for this request.
     async function botIsOnline() {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 6000);
       try {
-        const res = await fetch(BOT_URL + "/", { signal: controller.signal });
+        const res = await fetch(BOT_URL + "/", {
+          signal: controller.signal,
+          headers: { "ngrok-skip-browser-warning": "1" }
+        });
         return res.ok;
       } catch (e) {
         return false;
@@ -140,7 +143,7 @@
       const last = Number(localStorage.getItem("notifiedAt") || 0);
       if (Date.now() - last < NOTIFY_COOLDOWN_MS) {
         notifyBtn.disabled = true;
-        statusEl.textContent = "Ο διαχειριστής έχει ήδη ειδοποιηθεί. Κρατήστε τη σελίδα ανοιχτή.";
+        statusEl.textContent = "Ο διαχειριστής έχει ήδη ειδοποιηθεί πρόσφατα. Κρατήστε τη σελίδα ανοιχτή.";
         return;
       }
 

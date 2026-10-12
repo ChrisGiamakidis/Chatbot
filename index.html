@@ -80,15 +80,21 @@
     let chatStarted = false;
     let pollTimer = null;
 
-    // The bot counts as online only if Rasa answers with a normal CORS response.
-    // If the tunnel or Rasa is down, the request fails or is rejected.
+    // Bypass ngrok's browser warning so this check reaches Rasa.
     async function botIsOnline() {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 6000);
       try {
-        const res = await fetch(BOT_URL + "/", { signal: controller.signal });
-        return res.ok;
+        const res = await fetch(BOT_URL + "/", {
+          signal: controller.signal,
+          headers: { "ngrok-skip-browser-warning": "1" },
+          cache: "no-store"
+        });
+        if (!res.ok) return false;
+        const body = await res.text();
+        return body.startsWith("Hello from Rasa:");
       } catch (e) {
+        console.warn("Chatbot health check failed:", e);
         return false;
       } finally {
         clearTimeout(timer);

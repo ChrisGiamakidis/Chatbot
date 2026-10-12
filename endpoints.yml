@@ -1,4 +1,2 @@
-# Endpoint of the server that runs custom actions.
-
 action_endpoint:
- url: "http://localhost:5055/webhook"
+  url: "http://127.0.0.1:5055/webhook"
